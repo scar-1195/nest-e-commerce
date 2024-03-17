@@ -12,10 +12,12 @@ import {
 
 import { ConfigService } from '@nestjs/config';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { ApiTags } from '@nestjs/swagger';
 import { FilesService } from './files.service';
 import { fileFilter, fileName } from './helpers';
 import { diskStorage } from 'multer';
 
+@ApiTags('Files')
 @Controller('files')
 export class FilesController {
   constructor(
